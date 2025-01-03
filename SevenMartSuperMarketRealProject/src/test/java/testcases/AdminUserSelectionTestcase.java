@@ -36,13 +36,13 @@ public class AdminUserSelectionTestcase extends BaseSeleniumURL {
 		String adminname = ExcelUtilities.getStringData(1, 0, "AdminUserPageName");
 		String adminid= ExcelUtilities.getIntegerData(1, 1, "AdminUserPageName");
 		adminuser.adminUserInformation(adminname,adminid);
-		adminuser.userTypeDropdownSelection();
+		adminuser.userTypeDropdownSelection("Staff");
 		adminuser.saveUserDetails();
-
+		homepage.logoutHomepage();
 		boolean isDashboardtext = adminuser.isAlertMessageMatch();
 		String actualText = "Admin Users | 7rmart supermarket";
 		assertEquals(driver.getTitle(), actualText, "Popup message does not match!");
-		homepage.logoutHomepage();
+		
 
 	}
 }

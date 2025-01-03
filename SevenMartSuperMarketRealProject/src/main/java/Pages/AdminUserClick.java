@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import utilities.PageUtilities;
+
 public class AdminUserClick {
 	
 	public WebDriver driver;
@@ -47,10 +49,10 @@ public AdminUserClick adminUserInformation(String name,String id)
 	password.sendKeys(id);
 	return this;
 }
-public AdminUserClick userTypeDropdownSelection()
+public AdminUserClick userTypeDropdownSelection(String usertypeDropdown)//read from excel
 {
-	Select drop = new Select(usertype);
-	drop.selectByVisibleText("Staff");
+	PageUtilities page = new PageUtilities( );
+	page.selectByVisibleText(usertype,usertypeDropdown);
 	return this;
 }
 public AdminUserClick saveUserDetails()
@@ -69,7 +71,7 @@ public AdminUserSearch searchuserButtonClick()
 }
 public boolean isAlertMessageMatch()
 {
-	driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(20));
+	
 	return dashboard.isDisplayed();
 	
 }

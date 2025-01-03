@@ -19,23 +19,15 @@ public class AdminUserSearchTestCase extends BaseSeleniumURL {
 
 	@Test
 	@Parameters({ "username", "password","adminname","adminID" })
-	public void verifyUserIsableToSearchUsernameandType(String username, String password,String adminname,String adminID) throws IOException {
+	public void verifyUserIsableToSearchUsernameandType(String username, String password,String adminname,String adminID){
 		
 	
 
 		LoginPage login = new LoginPage(driver);
 		
-		
-		/*
-		 * String usernamefield = ExcelUtilities.getStringData(1, 0, "LoginPage");
-		 * String passwordfield = ExcelUtilities.getStringData(1, 1, "LoginPage");
-		 */
-
 		login.enterUserNameAndenterPassword(username, password);
 		homepage = login.clickOnSignInButton();
 		adminuser = homepage.adminUserClick();
-		/*String adminname = ExcelUtilities.getStringData(1, 0, "AdminUserSearch");
-		String adminid = ExcelUtilities.getIntegerData(1, 1, "AdminUserSearch");*/
 		adminusersearch = adminuser.searchuserButtonClick();
 		adminusersearch.searchbuttonClickToVerify();
 		

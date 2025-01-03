@@ -8,13 +8,16 @@ import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.WebElement;
 
+import constants.Constant;
+
 public class FileUploadUtility {
 	
 	public void robotClass(WebElement element,String path) throws AWTException
 	{
-		StringSelection choose = new StringSelection(path);
+		String filepath= Constant.FILEPATH;
+		StringSelection choose = new StringSelection(filepath);
 
-	       //to copy path we are using tool kit
+	   
 		      
 	       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(choose,null);
 		Robot robot = new Robot();

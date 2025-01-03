@@ -26,6 +26,22 @@ public class HomePage {
 	WebElement homewindow;
 	@FindBy(xpath="//a[@class='small-box-footer']")
 	WebElement adminuser;
+	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category'])[2]")
+	WebElement sublistcategory;
+	@FindBy(xpath="(//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-news\"])[2]")
+	WebElement managenews;
+	public ManageNews manageNewsClick()
+	{
+		managenews.click();
+		return new ManageNews(driver);
+	}
+	
+	public SubListCategories listcategoriesClick()
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		sublistcategory.click();
+		return new SubListCategories(driver);
+	}
 	
 	public AdminUserClick adminUserClick()
 	{
@@ -36,7 +52,7 @@ public class HomePage {
 	
 	public HomePage logoutHomepage()
 	{
-		driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		admin.click();
 		logout.click();
 		return this;
