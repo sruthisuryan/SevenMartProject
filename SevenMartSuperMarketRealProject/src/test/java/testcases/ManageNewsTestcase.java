@@ -21,7 +21,7 @@ public class ManageNewsTestcase extends BaseSeleniumURL {
 		Object data[][]=  { {"admin","admin"} };
 		return data;
 		 
-		
+	//hfdsk	
 	}
 	 @Test(dataProvider = "Credentials")
   public void verifyUserisAbletoEnterManageNews(String username,String password) {

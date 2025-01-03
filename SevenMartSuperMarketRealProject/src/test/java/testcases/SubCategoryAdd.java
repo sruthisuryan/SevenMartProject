@@ -31,7 +31,7 @@ public class SubCategoryAdd extends BaseSeleniumURL {
 		 // String subcat = ExcelUtilities.getStringData(1, 1, "AddCategory");
 		  sublist.addSubCategories("test");
 	
-		  
+		  //etayhd
          sublist.uploadimage();
         sublist.saveClick();
 	}

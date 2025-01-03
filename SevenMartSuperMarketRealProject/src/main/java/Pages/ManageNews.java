@@ -43,7 +43,7 @@ public ManageNews saveButtonClick()
 }
 
 public boolean isMatchTitle() {
-	
+	//test
 	return newswindow.isDisplayed();
 }
 }

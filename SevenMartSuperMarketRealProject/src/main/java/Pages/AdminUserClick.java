@@ -57,7 +57,7 @@ public AdminUserClick userTypeDropdownSelection(String usertypeDropdown)//read f
 }
 public AdminUserClick saveUserDetails()
 {
-	save.click();
+	save.click();//tt
 	return this;
 	
 }

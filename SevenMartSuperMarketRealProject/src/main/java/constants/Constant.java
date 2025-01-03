@@ -8,5 +8,5 @@ public class Constant {
 	
 	public static final String PDFPATH = System.getProperty("user.dir")+"\\src\\test\\resources\\ISTQB.pdf";
 	public static final String FILEPATH = System.getProperty("user.dir")+"\\src\\test\\resources\\image.png";		
-
+//test
 }

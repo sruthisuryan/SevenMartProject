@@ -11,7 +11,7 @@ public class HomePageTestcase extends BaseSeleniumURL {
 	public HomePage homepage;
   @Test
   public void verifyUserisabletoLogoutSuccessfully() {
-	  
+	  //tr
 	  LoginPage login = new LoginPage(driver);
 	  login.enterUserNameAndenterPassword("admin", "admin");
 	  

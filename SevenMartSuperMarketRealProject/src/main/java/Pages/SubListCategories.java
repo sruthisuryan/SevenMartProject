@@ -23,7 +23,7 @@ public class SubListCategories {
 
 	public SubListCategories(WebDriver driver) {
 		this.driver =driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver, this); //test
 	}
 @FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")
 WebElement newlistcategories;

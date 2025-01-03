@@ -21,7 +21,7 @@ public class AdminUserSearchTestCase extends BaseSeleniumURL {
 	@Parameters({ "username", "password","adminname","adminID" })
 	public void verifyUserIsableToSearchUsernameandType(String username, String password,String adminname,String adminID){
 		
-	
+	//yu
 
 		LoginPage login = new LoginPage(driver);
 		
