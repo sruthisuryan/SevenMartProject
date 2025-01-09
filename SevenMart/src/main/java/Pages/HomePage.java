@@ -13,7 +13,7 @@ import utilities.WaitUtility;
 public class HomePage {
 	
 	public WebDriver driver;
-	public WaitUtility wait;
+	//public WaitUtility wait;
 	
 	public HomePage(WebDriver driver)
 	{
@@ -35,6 +35,13 @@ public class HomePage {
 	WebElement managenews;
 	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-product'])[4]")
 	WebElement productlist;
+	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'])[3]")
+	WebElement maincategory;
+	public MainCategory mainCatogoryClickFromDashboard()
+	{
+		maincategory.click();
+		return new MainCategory();
+	}
 	public ListProducts manageProductClick()
 	{
 		productlist.click();

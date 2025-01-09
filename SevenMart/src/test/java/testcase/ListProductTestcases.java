@@ -31,7 +31,5 @@ public class ListProductTestcases extends BaseSeleniumURL {
 	  list.valuesSelectionAndSave();
 	  boolean isHomepageloaded = login.isDashboardLoaded();
 	  assertTrue(isHomepageloaded,Constant.ERRORMESSAGE);
+  }	  
   }
-	  
-  }
-}
