@@ -40,7 +40,9 @@ public class HomePage {
 	public SearchAdminUserAndDelete searchUserDelete()
 	{
 		adminuser.click();
+		
 		return new SearchAdminUserAndDelete(driver);
+		
 	}
 public MainCategory mainCatogoryClickFromDashboard()
 {
