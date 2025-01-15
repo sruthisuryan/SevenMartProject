@@ -23,6 +23,8 @@ WebElement enternews;
 WebElement savebutton;
 @FindBy(xpath="//nav[@class='main-header navbar navbar-expand navbar-dark navbar-dark']")
 WebElement newswindow;
+@FindBy(xpath = "//span[text()='7rmart supermarket']")
+WebElement Dashboard;
 
 public ManageNews newButtonClick()
 {
@@ -45,5 +47,9 @@ public ManageNews saveButtonClick()
 public boolean isMatchTitle() {
 	//test
 	return newswindow.isDisplayed();
+}
+public boolean isDashboardLoaded() {
+	return Dashboard.isDisplayed();
+
 }
 }

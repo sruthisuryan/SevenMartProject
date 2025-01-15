@@ -35,6 +35,8 @@ WebElement subcategoryadd;
 WebElement choosefile;
 @FindBy(xpath="//button[@name='create']")
 WebElement savebutton;
+@FindBy(xpath = "//span[text()='7rmart supermarket']")
+WebElement Dashboard;
 
 public SubListCategories newListButtonClick()
 {
@@ -65,6 +67,11 @@ public SubListCategories saveClick()
 {
 	savebutton.click();
 	return this;
+}
+
+public boolean isDashboardLoaded() {
+	// TODO Auto-generated method stub
+	return Dashboard.isDisplayed();
 }
 
 }

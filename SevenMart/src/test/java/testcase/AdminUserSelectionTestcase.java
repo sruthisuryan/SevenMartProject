@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import Pages.AdminUserClick;
 import Pages.LoginPage;
+import constants.Constant;
 import dev.failsafe.internal.util.Assert;
 import utilities.ExcelUtilities;
 import utilities.FakerUtility;
@@ -43,7 +44,7 @@ public class AdminUserSelectionTestcase extends BaseSeleniumURL {
 		homepage.logoutHomepage();
 		boolean isDashboardtext = adminuser.isAlertMessageMatch();
 		String actualText = "Admin Users | 7rmart supermarket";
-		assertEquals(driver.getTitle(), actualText, "Popup message does not match!");
+		assertEquals(driver.getTitle(), actualText, Constant.ERRORMESSAGE);
 		
 //yy
 	}

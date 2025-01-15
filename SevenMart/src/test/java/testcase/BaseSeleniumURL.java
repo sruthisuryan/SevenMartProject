@@ -27,9 +27,9 @@ public class BaseSeleniumURL {
 	Properties properties;
 	
 	
-  @BeforeMethod
+  @BeforeMethod(alwaysRun = true) //grouping
   @Parameters("Browser")
-  public void beforeMethod(String browser) throws IOException {
+  public void beforeMethod(String browser) throws Exception {
 	  try {
 			properties = new Properties();
 			

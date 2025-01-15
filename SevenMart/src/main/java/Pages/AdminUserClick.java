@@ -35,7 +35,8 @@ WebElement dashboard;
 @FindBy(xpath = "//a[@class='btn btn-rounded btn-primary']")
 WebElement usersearch;
 
-
+@FindBy(xpath = "//span[text()='7rmart supermarket']")
+WebElement Dashboard;
 
 
 public AdminUserClick newButtonClick()
@@ -74,5 +75,9 @@ public boolean isAlertMessageMatch()
 	
 	return dashboard.isDisplayed();
 	
+}
+public boolean isDashboardLoaded() {
+	return Dashboard.isDisplayed();
+
 }
 }

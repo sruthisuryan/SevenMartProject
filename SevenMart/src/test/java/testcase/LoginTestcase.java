@@ -38,7 +38,7 @@ public class LoginTestcase extends BaseSeleniumURL {
 	  assertTrue(isHomepageloaded,Constant.ERRORMESSAGE);//hh
 	  
   }
-  @Test
+  @Test(groups = {"Regression"})
   public void verifyUserIsableToLoginwithValidUsernameandInvalidPassword() throws IOException
   {
 	  LoginPage login = new LoginPage(driver);
@@ -49,11 +49,11 @@ public class LoginTestcase extends BaseSeleniumURL {
 	  boolean isHomepageloaded = login.isDashboardLoaded();
 	  assertTrue(isHomepageloaded,Constant.ERRORMESSAGE);
   }
-  @Test
+  @Test(groups = {"Regression"})
   public void verifyUserIsableToLoginwithInValidUsernameandInvalidPassword()
   {
 	  LoginPage login = new LoginPage(driver);
-	  login.enterUserNameAndenterPassword("abc", "234");
+	  login.enterUserNameAndenterPassword("admin", "admin");
 	  login.clickOnSignInButton();
 	  boolean isHomepageloaded = login.isDashboardLoaded();
 	  assertTrue(isHomepageloaded,Constant.ERRORMESSAGE);

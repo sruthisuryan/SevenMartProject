@@ -15,7 +15,7 @@ public class ListProducts
  {
 	public WebDriver driver;
 	
-	public WaitUtility wait;
+	
 
 	public ListProducts(WebDriver driver) {
 		this.driver = driver;

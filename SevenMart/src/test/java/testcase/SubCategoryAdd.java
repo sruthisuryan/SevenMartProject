@@ -1,5 +1,7 @@
 package testcase;
 
+import static org.testng.Assert.assertEquals;
+
 import java.awt.AWTException;
 import java.io.IOException;
 
@@ -34,5 +36,8 @@ public class SubCategoryAdd extends BaseSeleniumURL {
 		  //etayhd
          sublist.uploadimage();
         sublist.saveClick();
+        boolean isDashboardtext = sublist.isDashboardLoaded();
+		String actualText = "Admin Users | 7rmart supermarket";
+		assertEquals(driver.getTitle(), actualText, Constant.ERRORMESSAGE);
 	}
 }

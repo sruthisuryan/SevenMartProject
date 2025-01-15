@@ -13,7 +13,6 @@ import utilities.WaitUtility;
 public class HomePage {
 	
 	public WebDriver driver;
-	//public WaitUtility wait;
 	
 	public HomePage(WebDriver driver)
 	{
@@ -37,11 +36,18 @@ public class HomePage {
 	WebElement productlist;
 	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category'])[3]")
 	WebElement maincategory;
-	public MainCategory mainCatogoryClickFromDashboard()
+	
+	public SearchAdminUserAndDelete searchUserDelete()
 	{
-		maincategory.click();
-		return new MainCategory();
+		adminuser.click();
+		return new SearchAdminUserAndDelete(driver);
 	}
+public MainCategory mainCatogoryClickFromDashboard()
+{
+	maincategory.click();
+	return new MainCategory(driver);
+	
+}
 	public ListProducts manageProductClick()
 	{
 		productlist.click();
@@ -56,7 +62,7 @@ public class HomePage {
 	
 	public SubListCategories listcategoriesClick()
 	{
-		//WaitUtility wait = new WaitUtility()
+		WaitUtility wait = new WaitUtility();
 		wait.waitForClickingElement(driver, sublistcategory);//wait declared here..
 		sublistcategory.click();
 		return new SubListCategories(driver);
@@ -64,6 +70,7 @@ public class HomePage {
 	
 	public AdminUserClick adminUserClick()
 	{
+		WaitUtility wait = new WaitUtility();
 		wait.waitForClickingElement(driver, adminuser);
 		adminuser.click();
 		return new AdminUserClick(driver);
@@ -71,7 +78,8 @@ public class HomePage {
 	
 	public HomePage logoutHomepage()
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WaitUtility wait = new WaitUtility();
+		wait.waitForClickingElement(driver, adminuser);
 		admin.click();
 		logout.click();
 		return this;
@@ -82,5 +90,9 @@ public class HomePage {
 	public boolean isMatchTitle() {
 		
 		return homewindow.isDisplayed();
+	}
+	public SearchListProductSearch searchProduct() {
+		productlist.click();
+		return new SearchListProductSearch(driver);
 	}
 }

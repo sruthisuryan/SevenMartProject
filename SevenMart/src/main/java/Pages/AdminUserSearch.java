@@ -21,7 +21,8 @@ public class AdminUserSearch {
 
 	}
 
-	
+	@FindBy(xpath="//a[@class='btn btn-rounded btn-primary']")
+	WebElement searchclick;
 
 	@FindBy(xpath = "//input[@name='un']")
 	WebElement usernamefield;
@@ -29,14 +30,19 @@ public class AdminUserSearch {
 	@FindBy(xpath = "//select[@name='ut']")
 	WebElement usertypeDropdown;
 
-	@FindBy(xpath = "//i[@class='fa fa-search']")
+	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger']")
 	WebElement searchusername;
 
 	@FindBy(xpath = "//a[text()='Reset']")
 	WebElement resetfield;
 
-
-	public AdminUserSearch addUsernameAndUsertype(String username )
+	@FindBy(xpath = "//span[text()='7rmart supermarket']")
+	WebElement Dashboard;
+	public AdminUserSearch clickOnSearch() {
+		searchclick.click();
+		return this;
+	}
+public AdminUserSearch addUsernameAndUsertype(String username )
 	{
 		usernamefield.sendKeys(username);
 		return this;
@@ -61,6 +67,11 @@ public class AdminUserSearch {
 		resetfield.click();
 		return this;
 		
+	}
+	
+	public boolean isAlertMessageMatch() {
+		return Dashboard.isDisplayed();
+	
 	}
 
 }

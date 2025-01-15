@@ -1,5 +1,7 @@
 package testcase;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.testng.annotations.Parameters;
@@ -9,6 +11,7 @@ import Pages.AdminUserClick;
 import Pages.AdminUserSearch;
 import Pages.HomePage;
 import Pages.LoginPage;
+import constants.Constant;
 import utilities.ExcelUtilities;
 
 public class AdminUserSearchTestCase extends BaseSeleniumURL {
@@ -35,6 +38,9 @@ public class AdminUserSearchTestCase extends BaseSeleniumURL {
 		adminusersearch.userTypeSelect(adminID);
 		
 		adminusersearch.searchbuttonClickToVerify();
+		boolean isDashboardtext = adminusersearch.isAlertMessageMatch();
+		String actualText = "Admin Users | 7rmart supermarket";
+		assertEquals(driver.getTitle(), actualText, Constant.ERRORMESSAGE);
 
 	}
 }
